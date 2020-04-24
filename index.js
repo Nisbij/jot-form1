@@ -3,6 +3,7 @@ var app = express();
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://Archelios:N!5@rg11232@cluster0-becy8.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
+app.use('/static', express.static(path.join(__dirname, 'views')))
 client.connect(err => {
   
   // perform actions on the collection object
