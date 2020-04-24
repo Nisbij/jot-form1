@@ -12,7 +12,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true });
     client.connect(err => {
         console.log("Database connected!");
         var collection = client.db("form").collection("user_info");
-        collection.insertOne(req)
+        collection.find({}).toArray();
         res.sendFile(__dirname + "/views/1.html");
     });
     
