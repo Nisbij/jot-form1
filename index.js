@@ -8,7 +8,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true });
   
   // perform actions on the collection object
   app.get('/',(req,res)=>{
-    console.log(JSON.stringify(req));
+    console.log(req);
     client.connect(err => {
         console.log("Database connected!");
         var collection = client.db("form").collection("user_info");
