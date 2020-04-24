@@ -8,10 +8,12 @@ client.connect(err => {
   
   // perform actions on the collection object
   app.use('/',(req,res)=>{
-    var collection = mongodb.db("form").collection("user_info");
+    var collection = client.db("form").collection("user_info");
     console.log(req);
     collection.insertOne(req);
     res.sendFile(__dirname + "/views/1.html");
   })
   client.close();
 });
+
+app.listen(process.env.PORT || 8080,()=>console.log("Hey man!"))
